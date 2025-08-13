@@ -1,11 +1,11 @@
 📌 Task Scheduler - Módulo de Usuário
-Módulo responsável pelo gerenciamento de usuários no sistema de Agendador de Tarefas.
-Inclui funcionalidades de cadastro, atualização, exclusão e autenticação de usuários.
+✨ Módulo responsável pelo gerenciamento de usuários no sistema de Agendador de Tarefas.
+Permite realizar operações de cadastro, atualização, exclusão e autenticação, garantindo segurança com JWT.
 
-🚀 Tecnologias
-Java 17+
+🚀 Tecnologias Utilizadas
+☕ Java 17+
 
-Spring Boot
+🌱 Spring Boot
 
 Spring Data JPA
 
@@ -15,31 +15,31 @@ JWT
 
 Spring Web
 
-PostgreSQL
+🐘 PostgreSQL
 
-Lombok
+🧩 Lombok
 
-JUnit
+🧪 JUnit
 
-Gradle (Groovy)
+📦 Gradle (Groovy)
 
-⚙️ Funcionalidades
-Cadastro de usuários
+⚙️ Principais Funcionalidades
+📋 Cadastro de usuários
 
-Alteração de dados
+✏️ Atualização de dados
 
-Exclusão de usuários
+🗑 Exclusão de contas
 
-Autenticação e autorização com JWT
+🔐 Autenticação e autorização via JWT
 
-🛠 Como executar
-Configurar o PostgreSQL no application.properties
+🛠 Como Executar
+Configure o PostgreSQL no arquivo application.properties
 
-Executar o projeto com:
+Execute o projeto com:
 
 bash
 Copy
 Edit
 gradle bootRun
 📄 Licença
-Projeto sob a licença MIT.
+Este projeto está licenciado sob a MIT License – utilize e adapte livremente.
