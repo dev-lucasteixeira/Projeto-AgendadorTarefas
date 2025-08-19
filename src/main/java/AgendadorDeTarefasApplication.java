@@ -1,5 +1,3 @@
-package com.example.Agendador_de_Tarefas;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
