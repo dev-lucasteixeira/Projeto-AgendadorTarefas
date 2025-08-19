@@ -36,4 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-**/src/main/java/resources/application.properties
+# Ignorar arquivo de configuração
+src/main/resources/application.properties
