@@ -1,12 +1,11 @@
-package infrastructure.security;
+package com.lucasteixeira.agendador.infrastructure.security;
 
 
-import business.dto.UsuarioDTO;
-import infrastructure.security.client.UsuarioClient;
+import com.lucasteixeira.agendador.business.dto.UsuarioDTO;
+import com.lucasteixeira.agendador.infrastructure.security.client.UsuarioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service

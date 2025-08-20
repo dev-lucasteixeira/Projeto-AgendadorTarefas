@@ -43,6 +43,19 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+    implementation 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+
+
+    configurations.all {
+        exclude group: 'io.r2dbc', module: 'r2dbc-spi'
+        exclude group: 'io.r2dbc', module: 'r2dbc-postgresql' // se estiver sendo puxado
+    }
+
+    tasks.withType(JavaCompile) {
+        options.annotationProcessorPath = configurations.annotationProcessor
+    }
+
 }
 
 dependencyManagement {
