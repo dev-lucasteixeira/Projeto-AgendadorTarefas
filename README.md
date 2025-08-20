@@ -1,45 +1,39 @@
-📌 Task Scheduler - Módulo de Usuário
-✨ Módulo responsável pelo gerenciamento de usuários no sistema de Agendador de Tarefas.
-Permite realizar operações de cadastro, atualização, exclusão e autenticação, garantindo segurança com JWT.
+# 📌 Projeto Agendador de Tarefas
 
-🚀 Tecnologias Utilizadas
-☕ Java 17+
+Aplicação desenvolvida em **Java + Spring Boot** para gerenciamento de tarefas.  
+O sistema permite criar, buscar, atualizar e editar tarefas de forma simples e escalável.
 
-🌱 Spring Boot
+🔜 Próxima etapa: **notificação de tarefas via e-mail**.
 
-Spring Data JPA
+---
 
-Spring Security
+## 🚀 Tecnologias Utilizadas
 
-JWT
+- ☕ **Java 17+**
+- 🌱 **Spring Boot**
+  - Spring Data (MongoDB)
+  - Spring Security + JWT
+  - Spring Web
+  - OpenFeign (Netflix)
+- 🐳 **MongoDB**
+- 🧪 **JUnit** (testes unitários)
+- 📦 **Gradle (Groovy DSL)**
+- 🔐 **Autenticação JWT**
 
-Spring Web
+---
 
-🐘 PostgreSQL
+## ⚙️ Funcionalidades
 
-🧩 Lombok
+- ➕ **POST** – Criação de tarefas  
+- 📋 **GET** – Listagem e consulta de tarefas  
+- ✏️ **PATCH / PUT** – Atualização de tarefas  
+- ❌ **DELETE** – Exclusão de tarefas  
 
-🧪 JUnit
+---
 
-📦 Gradle (Groovy)
+## 🛠️ Como Executar o Projeto
 
-⚙️ Principais Funcionalidades
-📋 Cadastro de usuários
-
-✏️ Atualização de dados
-
-🗑 Exclusão de contas
-
-🔐 Autenticação e autorização via JWT
-
-🛠 Como Executar
-Configure o PostgreSQL no arquivo application.properties
-
-Execute o projeto com:
-
-bash
-Copy
-Edit
-gradle bootRun
-📄 Licença
-Este projeto está licenciado sob a MIT License – utilize e adapte livremente.
+1. Configure o **MongoDB** (local ou container Docker).  
+2. Ajuste as propriedades no arquivo `application.properties`:
+   ```properties
+   spring.data.mongodb.uri=mongodb://localhost:27017/db_agendador
