@@ -1,9 +1,11 @@
-package infrastructure.security;
+package com.lucasteixeira.agendador.infrastructure.security;
 
-
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
@@ -12,7 +14,6 @@ public class JwtUtil {
 
     // Chave secreta usada para assinar e verificar tokens JWT
     private final String secretKey = "sua-chave-secreta-super-segura-que-deve-ser-bem-longa";
-
 
     // Extrai as claims do token JWT (informações adicionais do token)
     public Claims extractClaims(String token) {
@@ -24,7 +25,7 @@ public class JwtUtil {
     }
 
     // Extrai o nome de usuário do token JWT
-    public String extractUsername(String token) {
+    public String extractEmailToken(String token) {
         // Obtém o assunto (nome de usuário) das claims do token
         return extractClaims(token).getSubject();
     }
@@ -38,7 +39,7 @@ public class JwtUtil {
     // Valida o token JWT verificando o nome de usuário e se o token não está expirado
     public boolean validateToken(String token, String username) {
         // Extrai o nome de usuário do token
-        final String extractedUsername = extractUsername(token);
+        final String extractedUsername = extractEmailToken(token);
         // Verifica se o nome de usuário do token corresponde ao fornecido e se o token não está expirado
         return (extractedUsername.equals(username) && !isTokenExpired(token));
     }

@@ -1,4 +1,5 @@
-package infrastructure.security;
+package com.lucasteixeira.agendador.infrastructure.security;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -40,7 +41,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // Desativa proteção CSRF para APIs REST (não aplicável a APIs que não mantêm estado)
                 .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated() // Requer autenticação para todas as outras requisições
+                         .anyRequest().authenticated() // Requer autenticação para todas as outras requisições
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Configura a política de sessão como stateless (sem sessão)
@@ -50,5 +51,6 @@ public class SecurityConfig {
         // Retorna a configuração do filtro de segurança construída
         return http.build();
     }
+
 
 }

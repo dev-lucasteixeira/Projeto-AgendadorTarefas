@@ -1,5 +1,7 @@
-package infrastructure.security;
+package com.lucasteixeira.agendador.infrastructure.security;
 
+import com.lucasteixeira.agendador.infrastructure.security.JwtUtil;
+import com.lucasteixeira.agendador.infrastructure.security.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,7 +40,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             // Extrai o token JWT do cabeçalho
             final String token = authorizationHeader.substring(7);
             // Extrai o nome de usuário do token JWT
-            final String username = jwtUtil.extractUsername(token);
+            final String username = jwtUtil.extractEmailToken(token);
 
             // Se o nome de usuário não for nulo e o usuário não estiver autenticado ainda
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

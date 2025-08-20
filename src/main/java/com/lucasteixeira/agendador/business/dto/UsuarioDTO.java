@@ -1,4 +1,4 @@
-package business.dto;
+package com.lucasteixeira.agendador.business.dto;
 
 import lombok.*;
 
