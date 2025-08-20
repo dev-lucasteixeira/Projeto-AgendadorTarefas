@@ -2,6 +2,7 @@ package com.lucasteixeira.agendador.controller;
 
 import com.lucasteixeira.agendador.business.TarefaService;
 import com.lucasteixeira.agendador.business.dto.TarefasDTO;
+import com.lucasteixeira.agendador.infrastructure.enums.StatusNotificacaoEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -35,4 +36,22 @@ public class TarefasController {
     public ResponseEntity<List<TarefasDTO>> buscaListaDeTarefasPorEmail(@RequestHeader("Authorization") String token){
         return ResponseEntity.ok(tarefaService.buscaTarefasPorEmail(token));
     }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deletaTarefaPorId(@RequestParam String id){
+        tarefaService.deletaTarefaPorId(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PatchMapping
+    public ResponseEntity<TarefasDTO> alteraStatusNotificacao(@RequestParam("status")StatusNotificacaoEnum status,
+                                                              @RequestParam("id") String id){
+        return ResponseEntity.ok(tarefaService.alteraStatus(status, id));
+    }
+
+    @PutMapping
+    public ResponseEntity<TarefasDTO> UpdateTarefa(@RequestBody TarefasDTO dto, @RequestParam("id") String id){
+        return ResponseEntity.ok(tarefaService.updateTarefas(dto, id));
+    }
+
 }
