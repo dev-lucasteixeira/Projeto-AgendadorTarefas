@@ -27,7 +27,7 @@ public class TarefaService {
     private final TarefaUpdateConverter tarefaUpdateConverter;
     private final TaskProducer taskProducer;
 
-    @CacheEvict(value = "events", key = "#email")
+    @CacheEvict(value = "task", allEntries = true)
     public TarefasDTO gravarTarefa( TarefasDTO tarefasDTO, String email){
         tarefasDTO.setDataCriacao(LocalDateTime.now()); //pega a hora atual
         tarefasDTO.setStatusNotificacaoEnum(StatusNotificacaoEnum.PENDENTE);
@@ -52,7 +52,7 @@ public class TarefaService {
         return tarefaConverter.paraListaTarefasDTO(listasTarefas);
     }
 
-    @CacheEvict(value = "events", key = "#email")
+    @CacheEvict(value = "task", allEntries = true)
     public void deletaTarefaPorId(String id,String email){
         try {
             tarefaRepository.deleteById(id);
